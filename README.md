@@ -25,3 +25,7 @@ Nodejs+vuejs全栈开发《全站之巅》视频网站
 
     8、cnpm i nestjs-typegoose @typegoose/typegoose -S
     9、cnpm i mongoose @types/mongoose -S
+    10、nest g mo -p  admin  users
+    11、nest g co -p  admin  users
+    12、cnpm i nestjs-mongoose-crud -S
+    13、cnpm i @nestjs/swagger swagger-ui-express -S
