@@ -29,3 +29,7 @@ Nodejs+vuejs全栈开发《全站之巅》视频网站
     11、nest g co -p  admin  users
     12、cnpm i nestjs-mongoose-crud -S
     13、cnpm i @nestjs/swagger swagger-ui-express -S
+    14、nest g mo -p admin courses
+    15、nest g co -p admin courses
+    16、nest g mo -p admin episodes
+    17、nest g co -p admin episodes
