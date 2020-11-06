@@ -1,6 +1,12 @@
 <template>
   <div>
-    <avue-crud :data="data.data" :option="option"></avue-crud>
+    <avue-crud 
+      :data="data.data" 
+      :option="option"
+      @row-save="create"
+      @row-update="update"
+      @row-del="remove">
+    </avue-crud>
   </div>
 </template>
 
@@ -21,6 +27,22 @@ export default class CourseList extends Vue{
   async fetch(){
     const res = await this.$http.get('courses')
     this.data = res.data
+  }
+
+  async create(row,done){
+    await this.$http.post('courses',row)
+    this.$message.success("创建成功")
+    this.fetch()
+    done()
+  }
+
+  async update(row,index,done){
+    const data = JSON.parse(JSON.stringify(row))
+    delete data.$index
+    await this.$http.put(`courses/${row._id}`,row)
+    this.$message.success("更新成功")
+    this.fetch()
+    done()
   }
 
   async remove(row){
